@@ -50,7 +50,7 @@ MAX31875_Status MAX31875_SetRawOverTemperatureTreshold(MAX31875_Device* dev, uin
 
 ## Example
 
-In [examples folder](example) there is implemented example for PSoC 62 platform showing possible configuration of sensor, changing resolution, conversion rate and data format. Example allows to demonstrate Packet Error Checking feature and confiogures over temperature and hystheresis thresholds. If you use different platforn, then [main.c](examples/01_overtemperature_psoc6/main.c) should be still interesting for you.
+In [examples folder](examples) there is implemented example for PSoC 62 platform showing possible configuration of sensor, changing resolution, conversion rate and data format. Example allows to demonstrate Packet Error Checking feature and confiogures over temperature and hystheresis thresholds. If you use different platforn, then [main.c](examples/01_overtemperature_psoc6/main.c) should be still interesting for you.
 
 Following code show the most simple usage of library with MAX31875 sensor. If you are using vairant of sensor with different address, replace `MAX31875_I2C_7BIT_ADDRESS_DEFAULT` by `MAX31875_I2C_7BIT_ADDRESS_Rx` where `x` is the number after `R` in part name. For exmaple, if you use MAX31875**R3**TZS+, then use `MAX31875_I2C_7BIT_ADDRESS_R3`. If you use multiple devices on the bus, then instantiate `MAX31875_Device dev;` for each sensor and call `MAX31875_Init` for each sensor.
 
