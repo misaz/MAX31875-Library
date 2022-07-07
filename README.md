@@ -2,20 +2,20 @@
 This repository contains sources, examples and description of library for Maxim Integrated MAX31875 temperature sensor connected to microcontroller using I2C bus. Library is designed as platform independent and is easily portable to other platforms. Library is ported to Cypress (Infineon) PSoC 6 platform and port is based on HAL library.
 
 ## Features
-- Written in C. Supports both C and C++
-- Dependencies only on stdint.h and stddef.h
+- Written in C. Supports both C and C++ projects
+- Dependencies only on `stdint.h` and `stddef.h`
+- Multiple devices with different addresses on the same bus are supported
 - Support for reading templerature as float or RAW value from sensor
 - Support for single-shot, continous and shutdown mode
 - Support for configuring conversion rate (0.25 to 8 conversions per second)
 - Support for configuring resolution (8, 9, 10 or 12 bits)
 - Support for both normal and extended data formats
-- Support for configuring over-temperature and hystherisis temperatures from both float or RAW input.
+- Support for configuring over-temperature and hystherisis temperatures (can be configured using both float or RAW value passed to the library)
 - Support for selecting comparator or interrupt over-temperature detection mode
 - Support for configuring fault queue depth (1, 2, 4 or 6 faults before triggering over-temperature alarm)
-- Support for calculating and checking CRC on both transmitted and received transactions (PEC)
-- Multiple devices widht different addresses on the same bus are supported
+- Support for calculating and checking CRC on both transmitted and received I2C transactions (PEC)
 
-## Instalaltion
+## Instalation
 Go to Release section and download prepared ZIP archive targeting your platform. Unpack the downloaded archieve and copy all 4 files to your project. Then add `#include "MAX31875.h"` at the befininf of your source code. See example below for more details.
 
 If your platform is not supported, then download Generic variant and implement 4 functions in MAX31875_PlatformSpecific.c file according to comment description in these functions.
