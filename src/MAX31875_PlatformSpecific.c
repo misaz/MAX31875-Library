@@ -1,8 +1,6 @@
 #include "MAX31875_PlatformSpecific.h"
 #include "MAX31875.h"
 
-static cyhal_i2c_t i2c;
-
 MAX31875_Status MAX31875_PlatformSpecific_Init() {
 	// this function must initialize I2C bus driver. It should not generate any 
 	// transaction to the MAX31875 device. It is recommended to generate 9 clock  
