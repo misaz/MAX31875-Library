@@ -136,8 +136,8 @@ typedef struct  {
 MAX31875_Status MAX31875_Init(MAX31875_Device* dev, uint8_t i2cAddress);
 MAX31875_Status MAX31875_Deinit(MAX31875_Device* dev);
 
+MAX31875_Status MAX31875_GetDefaultConfiguration(MAX31875_Configuration* config);
 MAX31875_Status MAX31875_GetConfiguration(MAX31875_Device* dev, MAX31875_Configuration* config);
-MAX31875_Status MAX31875_GetDefaultConfiguration(MAX31875_Device* dev, MAX31875_Configuration* config);
 MAX31875_Status MAX31875_SetConfiguration(MAX31875_Device* dev, MAX31875_Configuration* config);
 
 MAX31875_Status MAX31875_TriggerSingleShotConversion(MAX31875_Device* dev);

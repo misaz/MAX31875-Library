@@ -40,6 +40,8 @@ MAX31875_Status MAX31875_Init(MAX31875_Device *dev, uint8_t i2cAddress) {
 }
 
 MAX31875_Status MAX31875_Deinit(MAX31875_Device *dev) {
+	(void)dev;
+
 	initializedDevices--;
 
 	if (initializedDevices == 0) {
@@ -145,7 +147,7 @@ MAX31875_Status MAX31875_GetConfiguration(MAX31875_Device *dev, MAX31875_Configu
 	return MAX31875_Status_Ok;
 }
 
-MAX31875_Status MAX31875_GetDefaultConfiguration(MAX31875_Device *dev, MAX31875_Configuration *config) {
+MAX31875_Status MAX31875_GetDefaultConfiguration(MAX31875_Configuration *config) {
 	config->conversionRate = MAX31875_ConversionRate_0_25_PerSecond;
 	config->pecMode = MAX31875_PacketErrorCheckingMode_Disabled;
 	config->i2cTimeout = MAX31875_I2CTimeoutMode_Enabled;
@@ -157,6 +159,7 @@ MAX31875_Status MAX31875_GetDefaultConfiguration(MAX31875_Device *dev, MAX31875_
 
 	return MAX31875_Status_Ok;
 }
+
 MAX31875_Status MAX31875_SetConfiguration(MAX31875_Device *dev, MAX31875_Configuration *config) {
 	MAX31875_Status status;
 

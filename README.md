@@ -1,5 +1,5 @@
 # MAX31875 I2C Temperature Sensor Library
-This repository contains sources, examples and description of library for Maxim Integrated MAX31875 temperature sensor connected to microcontroller using I2C bus. Library is designed as platform independent and is easily portable to other platforms. Library is ported to Cypress (Infineon) PSoC 6 platform and port is based on HAL library.
+This repository contains sources, examples and description of library for Maxim Integrated MAX31875 temperature sensor connected to microcontroller using I2C bus. Library is designed as platform independent and is easily portable to other platforms. Library is ported to Cypress (Infineon) PSoC 6 platform (using HAL library) and Silicon Labs EFR32BG22 platform (with em_i2c). EFR32BG22 requires FreeRTOS, otherwise you can use it without any RTOS.
 
 ## Features
 - Written in C. Supports both C and C++ projects
@@ -28,7 +28,7 @@ MAX31875_Status MAX31875_Init(MAX31875_Device* dev, uint8_t i2cAddress);
 MAX31875_Status MAX31875_Deinit(MAX31875_Device* dev);
 
 MAX31875_Status MAX31875_GetConfiguration(MAX31875_Device* dev, MAX31875_Configuration* config);
-MAX31875_Status MAX31875_GetDefaultConfiguration(MAX31875_Device* dev, MAX31875_Configuration* config);
+MAX31875_Status MAX31875_GetDefaultConfiguration(MAX31875_Configuration* config);
 MAX31875_Status MAX31875_SetConfiguration(MAX31875_Device* dev, MAX31875_Configuration* config);
 
 MAX31875_Status MAX31875_TriggerSingleShotConversion(MAX31875_Device* dev);
