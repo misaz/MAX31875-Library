@@ -4,7 +4,7 @@ SENSOR_NAME="MAX31875"
 
 mkdir -p releases
 
-for port in Generic PSoC6 EFR32BG22; do
+for port in Generic PSoC6 EFR32BG22 XMC1100; do
 	if [ "$port" == "Generic" ]; then
 		PLATFORM_SPECIFIC_SOURCES_PREFIX="${SENSOR_NAME}_PlatformSpecific"
 	else
