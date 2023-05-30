@@ -25,7 +25,7 @@ int main(void) {
 	}
 
 	MAX31875_Configuration cfg;
-	MAX31875_GetDefaultConfiguration(&m2, &cfg);
+	MAX31875_GetDefaultConfiguration(&cfg);
 	cfg.conversionRate = MAX31875_ConversionRate_4_PerSecond;
 	cfg.resolution = MAX31875_Resolution_12bit;
 	cfg.dataFormat = MAX31875_DataFormat_Extended;
